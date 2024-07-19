@@ -4,9 +4,9 @@ import BodyInital from './components/BodyInital'
 function App() {
   return (
 
-    <>
+    <div>
       <BodyInital />
-    </>
+    </div>
   )
 }
 
