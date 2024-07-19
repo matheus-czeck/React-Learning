@@ -6,6 +6,9 @@ const ScreenSecond = ({ back, altura, peso }) => {
     const [color, setColor] = useState("black")
 
     const calcImc = () => {
+        if (!altura || altura <= 0 || !peso || peso <= 0) {
+            return 0; // Retorna 0 ou um valor padrão quando altura ou peso não são válidos
+          }
         let imc = peso / (altura * altura)
         imc = parseFloat(imc.toFixed(2))
         return imc
@@ -60,9 +63,11 @@ const ScreenSecond = ({ back, altura, peso }) => {
                 <h2>Confira as Classificações</h2>
                 <table>
                     <thead>
-                        <td>IMC</td>
-                        <td>Classificação</td>
-                        <td>Obesidade</td>
+                        <tr>
+                        <th>IMC</th>
+                        <th>Classificação</th>
+                        <th>Obesidade</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
